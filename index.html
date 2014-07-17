@@ -429,7 +429,7 @@ numbers.map( number =&gt; 3 * number )
             <div data-browser="swift" class="browser swift">
               <h4>SWIFT</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>def area(width: Int, height: Int) -&gt; Int {
+                <pre><code>func area(#width: Int, #height: Int) -&gt; Int {
     return width * height
 }
 
@@ -539,7 +539,7 @@ class Square: NamedShape {
     }
 }
 
-let test = Square(sideLength: 5.2)
+let test = Square(sideLength: 5.2, name: &quot;my test square&quot;)
 test.area()
 test.simpleDescription()
 </code></pre>
@@ -601,6 +601,47 @@ for (item &lt;- library) {
     } else if (item.isInstanceOf[Song]) {
         songCount += 1
     }
+}
+</code></pre>
+              </div>
+            </div>
+          </div>
+          <div id="pattern_match" class="comparison">
+            <h3><a href="#pattern_match">Pattern Match</a></h3>
+            <div data-browser="swift" class="browser swift">
+              <h4>SWIFT</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var movieCount = 0
+var songCount = 0
+
+for item in library {
+  switch item {
+    case let movie as Movie:
+      ++movieCount
+      println(&quot;Movie: '\(movie.name)', dir. \(movie.director)&quot;)
+    case let song as Song:
+      ++songCount
+      println(&quot;Song: '\(song.title)'&quot;)
+  }
+}
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="scala" class="browser scala">
+              <h4>SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>var movieCount = 0
+var songCount = 0
+
+for (item &lt;- library) {
+  item match {
+    case movie: Movie =&gt;
+      movieCount += 1
+      println(s&quot;Movie: '${movie.name}', dir. ${movie.director}&quot;)
+    case song: Song =&gt;
+      songCount += 1
+      println(s&quot;Song: '${song.title}'&quot;)
+  }
 }
 </code></pre>
               </div>
@@ -709,6 +750,7 @@ println(s&quot;Three feet is $threeFeet meters&quot;)
     </div>
     <footer><p>Shamelessly forked from <a href="http://youmightnotneedjquery.com/">http://youmightnotneedjquery.com/</a>.</footer>
     <div class="changelog">
+      <p>2014 July 16 - Pattern match example from Fredrik Ekholdt.</p>
       <p>2014 June 4 - Cleanup of Subclass from Gerald Loeffler.</p>
       <p>2014 June 4 - Added typecasting, protocols, and extensions.</p>
     </div>

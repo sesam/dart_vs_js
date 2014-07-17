@@ -2,6 +2,7 @@ declaration
 usage
 subclass
 checking_type
+pattern_match
 downcasting
 protocol
 extensions
