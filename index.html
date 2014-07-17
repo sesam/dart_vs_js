@@ -511,6 +511,16 @@ area(width = 10, height = 10)
 </code></pre>
               </div>
             </div>
+            <div data-browser="idiomatic" class="browser idiomatic">
+              <h4>IDIOMATIC SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>class Shape (var numberOfSides: Int = 0) {
+    def simpleDescription =
+        s&quot;A shape with $numberOfSides sides.&quot;
+}
+</code></pre>
+              </div>
+            </div>
           </div>
           <div id="usage" class="comparison">
             <h3><a href="#usage">Usage</a></h3>
@@ -761,6 +771,30 @@ println(&quot;Three feet is \(threeFeet) meters&quot;)
         def cm: Double = { return d / 100.0 }
         def mm: Double = { return d / 1000.0 }
         def ft: Double = { return d / 3.28084 }
+    }
+}
+
+import Extensions.DoubleUnit
+
+val oneInch = 25.4.mm
+println(s&quot;One inch is $oneInch meters&quot;)
+// prints &quot;One inch is 0.0254 meters&quot;
+val threeFeet = 3.ft
+println(s&quot;Three feet is $threeFeet meters&quot;)
+// prints &quot;Three feet is 0.914399970739201 meters&quot;
+</code></pre>
+              </div>
+            </div>
+            <div data-browser="idiomatic" class="browser idiomatic">
+              <h4>IDIOMATIC SCALA</h4>
+              <div data-lang="scala" class="code-block language-scala">
+                <pre><code>object Extensions {
+    implicit class DoubleUnit(d: Double) {
+        def km = d * 1000.0
+        def m = d
+        def cm = d / 100.0
+        def mm = d / 1000.0
+        def ft = d / 3.28084
     }
 }
 
