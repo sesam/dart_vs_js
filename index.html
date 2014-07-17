@@ -383,7 +383,7 @@ sumOf(42, 597, 12)
             <div data-browser="idiomatic" class="browser idiomatic">
               <h4>IDIOMATIC SCALA</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>Vector(42, 597, 12).sum
+                <pre><code>Array(42, 597, 12).sum
 </code></pre>
               </div>
             </div>
@@ -586,28 +586,25 @@ test.simpleDescription()
 </code></pre>
               </div>
             </div>
-            <div data-browser="scala" class="browser scala">
-              <h4>SCALA</h4>
+            <div data-browser="idiomatic" class="browser idiomatic">
+              <h4>IDIOMATIC SCALA</h4>
               <div data-lang="scala" class="code-block language-scala">
-                <pre><code>class NamedShape(var name: String) {
-    var numberOfSides: Int = 0
-
-    def simpleDescription() =
+                <pre><code>class NamedShape(var name: String,
+                 var numberOfSides: Int = 0) {
+    def simpleDescription =
         s&quot;A shape with $numberOfSides sides.&quot;
 }
 
 class Square(var sideLength: Double, name: String)
-    extends NamedShape(name) {
-    numberOfSides = 4
-    def area() = sideLength * sideLength
-
-    override def simpleDescription() =
+    extends NamedShape(name, numberOfSides = 4) {
+    def area = sideLength * sideLength
+    override def simpleDescription =
         s&quot;A square with sides of length $sideLength.&quot;
 }
 
 val test = new Square(5.2, &quot;my test square&quot;)
-test.area()
-test.simpleDescription()
+test.area
+test.simpleDescription
 </code></pre>
               </div>
             </div>
