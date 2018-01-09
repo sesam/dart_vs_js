@@ -13,5 +13,5 @@ folders. The rest are generated.
 
 To add a new comparison:
 - Create a folder for it.
-- Add `swift.scala`, `scala.scala`, and `idiomatic.scala` as needed.
+- Add `ruby.scala`, `scala.scala`, and `idiomatic.scala` as needed.
 - Update `order.txt`.
