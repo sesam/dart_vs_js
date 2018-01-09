@@ -12,9 +12,9 @@ head
   meta(http-equiv='X-UA-Compatible', content='chrome=1')
   meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
 
-  title Swift is a lot like Scala
+  title Ruby is maybe alike Scala?
 
-  meta(name='description', content='Examples of how Apple\'s Swift language is similar to Scala.')
+  meta(name='description', content='Examples of how Matz' Ruby language is maybe similar to Scala.')
 
   link(rel='stylesheet', href='css/prism.css')
   link(rel='stylesheet', href='css/index.css')
@@ -30,27 +30,23 @@ body
     header.page-header
       .inner
         h1
-          | Swift is a lot like Scala
+          | Ruby is maybe alike Scala?
 
     .explanation
       .inner
         p
-          | A new programming language called <a href="https://developer.apple.com/swift/">Swift</a> was announced at <a href="https://developer.apple.com/wwdc/">WWDC'14</a>. Here's a source-to-source comparison of Swift and <a href="http://www.scala-lang.org/">Scala</a> using the <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html">examples</a> given in "The Swift Programming Language" book published by Apple in the iTunes Store.
+          | An old programming language called <a href="https:///">Ruby</a> is still alive and kicking. Here's a source-to-source comparison of some randomly chosen examples of Ruby and <a href="http://www.scala-lang.org/">Scala</a>.
         p
-          | I suspect the two are related ;-) Syntacticly, it's fair to say that Swift is a dialect of Scala. Swift inherits from Scala most of the "banner" features listed by Apple: Type Inference, Closures, Tuples, Protocols, Extensions, Generics, Read-Eval-Print-Loop, etc.
+          | I don't suspect the two are related ;-) >:-> but the two programming languages might still have some of the same features: Type Inference, Closures, Tuples, Protocols, Extensions, Generics, Read-Eval-Print-Loop, etc.
         p
-          | Despite their syntactic similarity, Swift's runtime environment is quite distinct from Scala's, and is perhaps the most interesting aspect of the new language.
-          | Scala compiles to the JVM, uses garbage collection, and its object model transparently integrates with Java.
-          | Swift compiles to native code, uses automatic reference counting, and its object model transparently integrates with Objective-C.
-          | Thus, the similarity between the two languages does not extend much below the surface.
+          | Despite their syntactic differences, Matz' MRI runtime environment is quite distinct from Scala's. On the other hand, JRuby's runtime IS the same as Scala's.
+          | Scala compiles to the JVM, uses GC, and its object model transparently integrates with Java.
+          | Ruby compiles to bytecode, uses automatic reference counting and GC, a heavily fiddled-with object model, and still there's a java-implementation of Ruby that transparently integrates with Java.
+          | Thus, the similarity between the three mentioned are maybe less than you'd expect.
         p
-          | <a href="https://github.com/densh/talks/">Den Shabalin</a> provides another excellent <a href="http://www.scribd.com/doc/227879724/Swift-vs-Scala-2-11">point-by-point comparison</a>.
-        p
-          | p.s. Don't take this code too seriously! Most of it is
-          | rote, minimalistic translation of the Swift examples given
-          | by Apple. I give a handful of more idiomatic Scala
-          | translations. Feel free to submit a GitHub issue/pull request
-          | if you find anything unbearably crass.
+          | p.s. Never take anything on or in this series of tubes too series-ly! Huh? Most of this is pure conjecture.
+          | Please feel free to stomp upon these inferior code examples, by way of emitting glossy
+          | GitHub issues and / or  pull requests for anything you care enough about.
 
     header.search
 
@@ -90,7 +86,7 @@ body
                 if co.alternatives
                     +alternatives(co.alternatives.txt)
 
-                for browser in ['swift', 'scala', 'idiomatic', 'jquery', 'ie8', 'ie9', 'ie10']
+                for browser in ['ruby', 'scala', 'idiomatic']
                   if co[browser]
                     .browser(data-browser=getNamePart(browser), class=getNamePart(browser))
                       if browser == 'idiomatic'
@@ -105,24 +101,18 @@ body
                               code= co[browser][lang]
 
     footer
-      <p>Shamelessly forked from <a href="http://youmightnotneedjquery.com/">http://youmightnotneedjquery.com/</a>.
+      <p>Shamelessly forked from http://leverich.github.io/swiftislikescala/ that forked from http://youmightnotneedjquery.com/
 
     .changelog
       p
-        | 2014 July 16 - Added additional comparisons to 'idiomatic' Scala usage.
-      p
-        | 2014 July 16 - Pattern match example from Fredrik Ekholdt.
-      p
-        | 2014 June 4 - Cleanup of Subclass from Gerald Loeffler.
-      p
-        | 2014 June 4 - Added typecasting, protocols, and extensions.
+        | 2018 - Initial forkaroo
 
   script.
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-20537147-2', 'leverich.github.io');
-    ga('send', 'pageview');
+    //-ga('create', 'UA-20537147-2', 'leverich.github.io');
+    //-ga('send', 'pageview');
 
   div(style='-webkit-transform: translateZ(0);')
